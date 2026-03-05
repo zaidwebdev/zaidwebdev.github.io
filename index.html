@@ -80,12 +80,108 @@
         }
     </style>
 </head>
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zaid Web Developer</title>
+
+    <!-- CSS Style -->
+    <style>
+        /* Body & basic styling */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(120deg, #fdfbfb, #ebedee);
+            color: #333;
+        }
+
+        header {
+            text-align: center;
+            padding: 50px 20px;
+            background: #ff9800;
+            color: white;
+        }
+
+        section {
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        h2 { margin-bottom: 20px; }
+        p { font-size: 18px; }
+
+        button {
+            background: #ff9800;
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover { background: #e68900; }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #222;
+            color: white;
+        }
+
+        /* Floating WhatsApp Button */
+        .whatsapp-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #25D366;
+            color: white;
+            padding: 15px 20px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 18px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+            transition: 0.3s;
+        }
+
+        .whatsapp-btn:hover { transform: scale(1.1); }
+
+        /* Project cards */
+        .project-card {
+            display: inline-block;
+            background: white;
+            padding: 20px;
+            margin: 15px;
+            border-radius: 12px;
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 20px rgba(0,0,0,0.2);
+        }
+
+        /* Hero Animation */
+        @keyframes fadeInUp {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        .animate {
+            animation: fadeInUp 1s ease forwards;
+            opacity: 0;
+        }
+    </style>
+</head>
 <body>
 
 <header>
-    <h1>Hello, I am Zaid 👋</h1>
-    <p>I create modern, fast, and beautiful websites for businesses and creators.</p>
-    <button>Apply For Website</button>
+    <h1 class="animate">Hello, I am Zaid 👋</h1>
+<p class="animate">I create modern, fast, and beautiful websites for businesses and creators.</p>
+<button class="animate">Apply For Website</button>
 </header>
 
 <section>
