@@ -1,9 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-
 <title>Zaidyy Cloth</title>
-
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <style>
@@ -18,16 +16,7 @@ header{
 background:black;
 color:white;
 text-align:center;
-padding:50px;
-}
-
-header h1{
-margin:0;
-font-size:40px;
-}
-
-header p{
-font-size:18px;
+padding:40px;
 }
 
 .products{
@@ -41,15 +30,10 @@ padding:40px;
 .card{
 background:white;
 width:260px;
+padding:15px;
 border-radius:10px;
 box-shadow:0 5px 15px rgba(0,0,0,0.1);
-padding:15px;
 text-align:center;
-transition:0.3s;
-}
-
-.card:hover{
-transform:scale(1.05);
 }
 
 .card img{
@@ -58,28 +42,31 @@ border-radius:10px;
 }
 
 .price{
-font-size:20px;
 color:green;
+font-size:20px;
 }
 
 button{
-background:#25D366;
-border:none;
-padding:10px 20px;
+background:black;
 color:white;
-border-radius:5px;
-cursor:pointer;
+border:none;
+padding:10px 15px;
 margin-top:10px;
+cursor:pointer;
+border-radius:5px;
 }
 
-button:hover{
-background:#1ebe5d;
-}
-
-.location{
+.cart{
 background:white;
-padding:40px;
-text-align:center;
+padding:30px;
+margin:30px;
+border-radius:10px;
+}
+
+input{
+width:100%;
+padding:10px;
+margin:10px 0;
 }
 
 footer{
@@ -98,67 +85,52 @@ padding:20px;
 <header>
 
 <h1>Zaidyy Cloth</h1>
-
-<p>Trendy Fashion Store</p>
+<p>Fashion Store</p>
 
 </header>
 
 <section class="products">
 
 <div class="card">
-
 <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab">
-
-<h3>Stylish T-Shirt</h3>
-
+<h3>T-Shirt</h3>
 <p class="price">₹499</p>
-
-<button onclick="order()">Order on WhatsApp</button>
-
+<button onclick="add('T-Shirt',499)">Add to Cart</button>
 </div>
 
 <div class="card">
-
 <img src="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c">
-
-<h3>Modern Hoodie</h3>
-
+<h3>Hoodie</h3>
 <p class="price">₹999</p>
-
-<button onclick="order()">Order on WhatsApp</button>
-
+<button onclick="add('Hoodie',999)">Add to Cart</button>
 </div>
 
 <div class="card">
-
 <img src="https://images.unsplash.com/photo-1542272604-787c3835535d">
-
-<h3>Blue Jeans</h3>
-
+<h3>Jeans</h3>
 <p class="price">₹1299</p>
-
-<button onclick="order()">Order on WhatsApp</button>
-
+<button onclick="add('Jeans',1299)">Add to Cart</button>
 </div>
 
 </section>
 
-<section class="location">
+<section class="cart">
 
-<h2>Visit Our Store</h2>
+<h2>Your Cart</h2>
 
-<p><b>Zaidyy Cloth</b></p>
+<p id="items">No items</p>
 
-<p>
-Shop No 12, Fashion Market<br>
-MG Road, Pune<br>
-Maharashtra, India
-</p>
+<h3>Total: ₹<span id="total">0</span></h3>
 
-<p>
-Phone: 7620245922<br>
-Email: Zaidsheikhzaid06@gmail.com
-</p>
+<h2>Checkout</h2>
+
+<input placeholder="Your Name">
+
+<input placeholder="Phone Number">
+
+<input placeholder="Address">
+
+<button onclick="order()">Place Order</button>
 
 </section>
 
@@ -170,9 +142,24 @@ Email: Zaidsheikhzaid06@gmail.com
 
 <script>
 
+let cart=[]
+let total=0
+
+function add(name,price){
+
+cart.push(name)
+
+total+=price
+
+document.getElementById("items").innerText=cart.join(", ")
+
+document.getElementById("total").innerText=total
+
+}
+
 function order(){
 
-window.open("https://wa.me/917620245922")
+alert("Order Placed Successfully!")
 
 }
 
