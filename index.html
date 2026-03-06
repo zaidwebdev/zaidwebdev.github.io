@@ -3,31 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zaid Web Developer</title>
+    <title>Zaid Web Developer - New Theme</title>
 
     <!-- CSS Style -->
     <style>
-        /* Basic styling */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background: linear-gradient(120deg, #fdfbfb, #ebedee);
-            color: #333;
+            background: linear-gradient(135deg, #1f1c2c, #928dab); /* New dark theme */
+            color: #f0f0f0;
         }
 
         /* Hero Section */
         header {
-            text-align: center:
+            text-align: center;
             padding: 80px 20px;
-            background: #ff9800;
+            background: linear-gradient(90deg, #6a11cb, #2575fc);
             color: white;
         }
-
         h1 { font-size: 48px; margin: 10px 0; }
         p { font-size: 20px; margin: 10px 0 20px; }
         button {
-            background: #222;
+            background: #ff6f61;
             color: white;
             padding: 12px 25px;
             border: none;
@@ -36,38 +34,77 @@
             cursor: pointer;
             transition: 0.3s;
         }
-        button:hover { background: #444; }
+        button:hover { background: #ff3b2f; }
 
         /* Sections */
         section {
             text-align: center;
             padding: 60px 20px;
         }
-        h2 { margin-bottom: 20px; font-size: 36px; }
+        section:nth-child(even) { background: rgba(255,255,255,0.05); } /* alternating background */
+        h2 { margin-bottom: 20px; font-size: 36px; color: #ffeb3b; }
         p { font-size: 18px; max-width: 600px; margin: 0 auto 20px; }
 
         /* Project Cards */
         .project-card {
             display: inline-block;
-            background: white;
+            background: rgba(255,255,255,0.1);
             padding: 20px;
             margin: 15px;
             border-radius: 12px;
-            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.3);
             transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
             cursor: pointer;
         }
         .project-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 12px 20px rgba(0,0,0,0.25);
-            background: #fef2e0;
+            box-shadow: 0 12px 20px rgba(0,0,0,0.5);
+            background: rgba(255,255,255,0.2);
         }
+
+        /* Testimonials */
+        .testimonial-card {
+            display: inline-block;
+            background: rgba(255,255,255,0.1);
+            padding: 20px;
+            margin: 15px;
+            border-radius: 12px;
+            box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+            max-width: 300px;
+            color: #fff;
+        }
+
+        /* Contact Form */
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+            text-align: left;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 12px;
+            margin: 8px 0;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            background: rgba(255,255,255,0.1);
+            color: #fff;
+            box-sizing: border-box;
+        }
+        input::placeholder, textarea::placeholder { color: #ccc; }
+        input[type=submit] {
+            background: #ff6f61;
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        input[type=submit]:hover { background: #ff3b2f; }
 
         /* Footer */
         footer {
             text-align: center;
             padding: 20px;
-            background: #222;
+            background: #111;
             color: white;
         }
 
@@ -87,35 +124,26 @@
         }
         .whatsapp-btn:hover { transform: scale(1.1); }
 
-        /* Hero Animation */
+        /* Animations */
         @keyframes fadeInUp {
             0% { opacity: 0; transform: translateY(20px); }
             100% { opacity: 1; transform: translateY(0); }
         }
-        .animate {
-            animation: fadeInUp 1s ease forwards;
-            opacity: 0;
-        }
+        .animate { animation: fadeInUp 1s ease forwards; opacity: 0; }
 
-        /* Scroll Animation */
         @keyframes fadeIn {
             0% { opacity: 0; transform: translateY(30px); }
             100% { opacity: 1; transform: translateY(0); }
         }
-        .scroll-animate {
-            opacity: 0;
-            transition: opacity 0.5s ease, transform 0.5s ease;
-        }
-        .scroll-animate.visible {
-            animation: fadeIn 1s forwards;
-        }
+        .scroll-animate { opacity: 0; transition: opacity 0.5s ease, transform 0.5s ease; }
+        .scroll-animate.visible { animation: fadeIn 1s forwards; }
 
         /* Responsive */
         @media (max-width: 768px) {
             h1 { font-size: 36px; }
             h2 { font-size: 28px; }
             p { font-size: 16px; }
-            .project-card { width: 80%; margin: 15px auto; display: block; }
+            .project-card, .testimonial-card { width: 80%; margin: 15px auto; display: block; }
         }
         @media (max-width: 480px) {
             h1 { font-size: 28px; }
@@ -137,7 +165,7 @@
     <!-- About Me Section -->
     <section class="scroll-animate">
         <h2>About Me</h2>
-        <p>Hello! I'm Zaid, a passionate web developer who creates stunning websites for businesses, creators, and clients looking for professional online presence.</p>
+        <p>Hello! I'm Zaid, a passionate web developer creating stunning websites for businesses and clients.</p>
         <p>📧 Email: <a href="mailto:Zaidsheikhzaid06@gmail.com">Zaidsheikhzaid06@gmail.com</a></p>
         <p>📞 Phone: <a href="tel:+917620245922">+91 7620245922</a></p>
     </section>
@@ -148,6 +176,30 @@
         <div class="project-card">Business Website</div>
         <div class="project-card">Portfolio Website</div>
         <div class="project-card">E-commerce Website</div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="scroll-animate">
+        <h2>Testimonials</h2>
+        <div class="testimonial-card">
+            <p>"Zaid built our website and it looks amazing! Highly recommended."</p>
+            <p>– Client A</p>
+        </div>
+        <div class="testimonial-card">
+            <p>"Fast, professional, and creative. Love the results!"</p>
+            <p>– Client B</p>
+        </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section class="scroll-animate">
+        <h2>Contact Me</h2>
+        <form action="mailto:Zaidsheikhzaid06@gmail.com" method="post" enctype="text/plain">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+            <input type="submit" value="Send Message">
+        </form>
     </section>
 
     <!-- Footer -->
@@ -161,24 +213,14 @@
     <!-- Scroll Animation Script -->
     <script>
         const scrollElements = document.querySelectorAll(".scroll-animate");
-
         const elementInView = (el, offset = 100) => {
             const elementTop = el.getBoundingClientRect().top;
             return elementTop <= (window.innerHeight - offset);
         };
-
-        const displayScrollElement = (element) => {
-            element.classList.add("visible");
-        };
-
+        const displayScrollElement = (element) => { element.classList.add("visible"); };
         const handleScrollAnimation = () => {
-            scrollElements.forEach(el => {
-                if (elementInView(el, 150)) {
-                    displayScrollElement(el);
-                }
-            });
-        }
-
+            scrollElements.forEach(el => { if (elementInView(el, 150)) displayScrollElement(el); });
+        };
         window.addEventListener("scroll", handleScrollAnimation);
         window.addEventListener("load", handleScrollAnimation);
     </script>
