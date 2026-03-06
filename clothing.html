@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 
 <title>Zaidyy Clothing</title>
@@ -11,14 +12,14 @@
 body{
 margin:0;
 font-family:Arial;
-background:#f2f2f2;
+background:#f5f5f5;
 }
 
 header{
 background:black;
 color:white;
 text-align:center;
-padding:40px;
+padding:50px;
 }
 
 header h1{
@@ -30,50 +31,68 @@ font-size:40px;
 display:flex;
 flex-wrap:wrap;
 justify-content:center;
-gap:30px;
+gap:25px;
 padding:40px;
 }
 
 .card{
 background:white;
 width:260px;
-padding:15px;
 border-radius:10px;
-box-shadow:0 5px 15px rgba(0,0,0,0.1);
-text-align:center;
+overflow:hidden;
+box-shadow:0 5px 20px rgba(0,0,0,0.15);
+transition:0.3s;
+}
+
+.card:hover{
+transform:translateY(-5px);
 }
 
 .card img{
 width:100%;
-border-radius:10px;
+height:250px;
+object-fit:cover;
+}
+
+.card h3{
+padding:10px;
 }
 
 .price{
 color:green;
 font-size:20px;
+padding:0 10px;
 }
 
 button{
+margin:10px;
+padding:10px;
+width:90%;
+border:none;
 background:black;
 color:white;
-border:none;
-padding:10px 15px;
-margin-top:10px;
-cursor:pointer;
 border-radius:5px;
+cursor:pointer;
+}
+
+button:hover{
+background:#333;
 }
 
 .cart{
 background:white;
-padding:30px;
 margin:30px;
+padding:30px;
 border-radius:10px;
+box-shadow:0 5px 15px rgba(0,0,0,0.1);
 }
 
 input{
 width:100%;
-padding:10px;
+padding:12px;
 margin:10px 0;
+border:1px solid #ccc;
+border-radius:5px;
 }
 
 footer{
@@ -93,7 +112,7 @@ padding:20px;
 
 <h1>Zaidyy Clothing</h1>
 
-<p>Trendy Fashion Store</p>
+<p>Premium Fashion Store</p>
 
 </header>
 
@@ -103,11 +122,11 @@ padding:20px;
 
 <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab">
 
-<h3>T-Shirt</h3>
+<h3>Classic T-Shirt</h3>
 
 <p class="price">₹499</p>
 
-<button onclick="add('T-Shirt',499)">Add to Cart</button>
+<button onclick="add('Classic T-Shirt',499)">Add to Cart</button>
 
 </div>
 
@@ -115,11 +134,11 @@ padding:20px;
 
 <img src="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c">
 
-<h3>Hoodie</h3>
+<h3>Stylish Hoodie</h3>
 
 <p class="price">₹999</p>
 
-<button onclick="add('Hoodie',999)">Add to Cart</button>
+<button onclick="add('Stylish Hoodie',999)">Add to Cart</button>
 
 </div>
 
@@ -127,11 +146,11 @@ padding:20px;
 
 <img src="https://images.unsplash.com/photo-1542272604-787c3835535d">
 
-<h3>Jeans</h3>
+<h3>Blue Jeans</h3>
 
 <p class="price">₹1299</p>
 
-<button onclick="add('Jeans',1299)">Add to Cart</button>
+<button onclick="add('Blue Jeans',1299)">Add to Cart</button>
 
 </div>
 
@@ -141,17 +160,17 @@ padding:20px;
 
 <h2>Your Cart</h2>
 
-<p id="items">No items</p>
+<p id="items">No items added</p>
 
 <h3>Total: ₹<span id="total">0</span></h3>
 
 <h2>Checkout</h2>
 
-<input placeholder="Your Name">
+<input placeholder="Full Name">
 
 <input placeholder="Phone Number">
 
-<input placeholder="Address">
+<input placeholder="Delivery Address">
 
 <button onclick="order()">Place Order</button>
 
@@ -182,7 +201,7 @@ document.getElementById("total").innerText=total
 
 function order(){
 
-alert("Order Placed Successfully!")
+alert("Order placed successfully!")
 
 }
 
