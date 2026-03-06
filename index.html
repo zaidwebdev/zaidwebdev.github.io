@@ -3,19 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zaid Web Developer - New Theme</title>
+    <title>Zaid Web Developer - Pro Theme</title>
 
-    <!-- CSS Style -->
     <style>
+        /* General */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background: linear-gradient(135deg, #1f1c2c, #928dab); /* New dark theme */
+            background: linear-gradient(135deg, #1f1c2c, #928dab);
             color: #f0f0f0;
         }
 
-        /* Hero Section */
+        /* Hero */
         header {
             text-align: center;
             padding: 80px 20px;
@@ -41,7 +41,7 @@
             text-align: center;
             padding: 60px 20px;
         }
-        section:nth-child(even) { background: rgba(255,255,255,0.05); } /* alternating background */
+        section:nth-child(even) { background: rgba(255,255,255,0.05); }
         h2 { margin-bottom: 20px; font-size: 36px; color: #ffeb3b; }
         p { font-size: 18px; max-width: 600px; margin: 0 auto 20px; }
 
@@ -60,6 +60,31 @@
             transform: translateY(-5px);
             box-shadow: 0 12px 20px rgba(0,0,0,0.5);
             background: rgba(255,255,255,0.2);
+        }
+
+        /* Gallery */
+        .project-gallery {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .project-gallery .project-card img {
+            width: 250px;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .project-gallery .project-card img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 12px 20px rgba(0,0,0,0.5);
+        }
+        .project-gallery .project-card p {
+            margin-top: 10px;
+            font-weight: bold;
+            color: #ffeb3b;
+            text-align: center;
         }
 
         /* Testimonials */
@@ -108,7 +133,7 @@
             color: white;
         }
 
-        /* WhatsApp Button */
+        /* WhatsApp */
         .whatsapp-btn {
             position: fixed;
             bottom: 20px;
@@ -130,7 +155,6 @@
             100% { opacity: 1; transform: translateY(0); }
         }
         .animate { animation: fadeInUp 1s ease forwards; opacity: 0; }
-
         @keyframes fadeIn {
             0% { opacity: 0; transform: translateY(30px); }
             100% { opacity: 1; transform: translateY(0); }
@@ -155,14 +179,14 @@
 </head>
 <body>
 
-    <!-- Hero Section -->
+    <!-- Hero -->
     <header>
         <h1 class="animate">Hello, I am Zaid 👋</h1>
         <p class="animate">I create modern, fast, and beautiful websites for businesses and creators.</p>
         <button class="animate">Apply For Website</button>
     </header>
 
-    <!-- About Me Section -->
+    <!-- About -->
     <section class="scroll-animate">
         <h2>About Me</h2>
         <p>Hello! I'm Zaid, a passionate web developer creating stunning websites for businesses and clients.</p>
@@ -170,7 +194,7 @@
         <p>📞 Phone: <a href="tel:+917620245922">+91 7620245922</a></p>
     </section>
 
-    <!-- Projects Section -->
+    <!-- Existing Projects -->
     <section class="scroll-animate">
         <h2>My Projects</h2>
         <div class="project-card">Business Website</div>
@@ -178,7 +202,7 @@
         <div class="project-card">E-commerce Website</div>
     </section>
 
-    <!-- Testimonials Section -->
+    <!-- Testimonials -->
     <section class="scroll-animate">
         <h2>Testimonials</h2>
         <div class="testimonial-card">
@@ -191,7 +215,26 @@
         </div>
     </section>
 
-    <!-- Contact Form Section -->
+    <!-- Gallery Section (Next Projects) -->
+    <section class="scroll-animate">
+        <h2>My Latest Projects</h2>
+        <div class="project-gallery">
+            <div class="project-card">
+                <img src="images/project1.jpg" alt="Project 1">
+                <p>Business Website</p>
+            </div>
+            <div class="project-card">
+                <img src="images/project2.jpg" alt="Project 2">
+                <p>Portfolio Website</p>
+            </div>
+            <div class="project-card">
+                <img src="images/project3.jpg" alt="Project 3">
+                <p>E-commerce Website</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
     <section class="scroll-animate">
         <h2>Contact Me</h2>
         <form action="mailto:Zaidsheikhzaid06@gmail.com" method="post" enctype="text/plain">
@@ -226,4 +269,4 @@
     </script>
 
 </body>
-</html>
+    </html>
