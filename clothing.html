@@ -2,13 +2,14 @@
 <html>
 <head>
 <title>Zaidyy Cloth</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
 <style>
 
 body{
-font-family: Arial;
 margin:0;
-background:#f5f5f5;
+font-family:Arial;
+background:#f4f4f4;
 }
 
 header{
@@ -18,13 +19,9 @@ text-align:center;
 padding:40px;
 }
 
-h1{
+header h1{
 margin:0;
-}
-
-section{
-padding:40px;
-text-align:center;
+font-size:35px;
 }
 
 .products{
@@ -32,14 +29,21 @@ display:flex;
 flex-wrap:wrap;
 justify-content:center;
 gap:20px;
+padding:40px;
 }
 
 .card{
 background:white;
+width:250px;
 padding:20px;
 border-radius:10px;
-box-shadow:0 5px 10px rgba(0,0,0,0.1);
-width:200px;
+box-shadow:0 5px 15px rgba(0,0,0,0.1);
+text-align:center;
+transition:0.3s;
+}
+
+.card:hover{
+transform:scale(1.05);
 }
 
 .card img{
@@ -47,14 +51,23 @@ width:100%;
 border-radius:10px;
 }
 
+.price{
+font-size:20px;
+color:#27ae60;
+}
+
 button{
 background:#25D366;
-color:white;
 border:none;
-padding:10px;
-margin-top:10px;
+padding:10px 20px;
+color:white;
 border-radius:5px;
 cursor:pointer;
+margin-top:10px;
+}
+
+button:hover{
+background:#1ebe5d;
 }
 
 footer{
@@ -74,47 +87,39 @@ padding:20px;
 <p>Trendy Fashion For Everyone</p>
 </header>
 
-<section>
-
-<h2>Our Products</h2>
-
-<div class="products">
+<section class="products">
 
 <div class="card">
-<img src="https://via.placeholder.com/200">
-<h3>T-Shirt</h3>
-<p>Comfortable cotton t-shirt</p>
-<button onclick="order()">Order</button>
+<img src="https://via.placeholder.com/250">
+<h3>Stylish T-Shirt</h3>
+<p class="price">₹499</p>
+<button onclick="order()">Order on WhatsApp</button>
 </div>
 
 <div class="card">
-<img src="https://via.placeholder.com/200">
-<h3>Hoodie</h3>
-<p>Stylish winter hoodie</p>
-<button onclick="order()">Order</button>
+<img src="https://via.placeholder.com/250">
+<h3>Modern Hoodie</h3>
+<p class="price">₹999</p>
+<button onclick="order()">Order on WhatsApp</button>
 </div>
 
 <div class="card">
-<img src="https://via.placeholder.com/200">
-<h3>Jeans</h3>
-<p>Modern blue jeans</p>
-<button onclick="order()">Order</button>
-</div>
-
+<img src="https://via.placeholder.com/250">
+<h3>Blue Jeans</h3>
+<p class="price">₹1299</p>
+<button onclick="order()">Order on WhatsApp</button>
 </div>
 
 </section>
 
 <footer>
-© 2026 Zaidyy Cloth
+<p>© 2026 Zaidyy Cloth</p>
 </footer>
 
 <script>
-
 function order(){
 window.open("https://wa.me/917620245922");
 }
-
 </script>
 
 </body>
