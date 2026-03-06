@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Zaidyy Cloth</title>
+
+<style>
+
+body{
+font-family: Arial;
+margin:0;
+background:#f5f5f5;
+}
+
+header{
+background:black;
+color:white;
+text-align:center;
+padding:40px;
+}
+
+h1{
+margin:0;
+}
+
+section{
+padding:40px;
+text-align:center;
+}
+
+.products{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:20px;
+}
+
+.card{
+background:white;
+padding:20px;
+border-radius:10px;
+box-shadow:0 5px 10px rgba(0,0,0,0.1);
+width:200px;
+}
+
+.card img{
+width:100%;
+border-radius:10px;
+}
+
+button{
+background:#25D366;
+color:white;
+border:none;
+padding:10px;
+margin-top:10px;
+border-radius:5px;
+cursor:pointer;
+}
+
+footer{
+background:black;
+color:white;
+text-align:center;
+padding:20px;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>Zaidyy Cloth</h1>
+<p>Trendy Fashion For Everyone</p>
+</header>
+
+<section>
+
+<h2>Our Products</h2>
+
+<div class="products">
+
+<div class="card">
+<img src="https://via.placeholder.com/200">
+<h3>T-Shirt</h3>
+<p>Comfortable cotton t-shirt</p>
+<button onclick="order()">Order</button>
+</div>
+
+<div class="card">
+<img src="https://via.placeholder.com/200">
+<h3>Hoodie</h3>
+<p>Stylish winter hoodie</p>
+<button onclick="order()">Order</button>
+</div>
+
+<div class="card">
+<img src="https://via.placeholder.com/200">
+<h3>Jeans</h3>
+<p>Modern blue jeans</p>
+<button onclick="order()">Order</button>
+</div>
+
+</div>
+
+</section>
+
+<footer>
+© 2026 Zaidyy Cloth
+</footer>
+
+<script>
+
+function order(){
+window.open("https://wa.me/917620245922");
+}
+
+</script>
+
+</body>
+</html>
