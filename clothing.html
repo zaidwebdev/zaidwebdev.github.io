@@ -1,173 +1,91 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-
 <title>Zaidyy Clothing</title>
-
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
 <style>
 
 body{
+font-family: Arial;
 margin:0;
-font-family:Arial;
 background:#f5f5f5;
 }
 
 header{
 background:black;
 color:white;
+padding:15px;
 text-align:center;
-padding:40px;
-}
-
-.buttons{
-text-align:center;
-margin-top:20px;
-}
-
-.buttons button{
-padding:10px 20px;
-margin:10px;
-border:none;
-background:black;
-color:white;
-cursor:pointer;
-border-radius:5px;
+font-size:25px;
 }
 
 .products{
 display:flex;
 flex-wrap:wrap;
 justify-content:center;
-gap:25px;
-padding:40px;
+padding:20px;
 }
 
-.card{
+.product{
 background:white;
-width:250px;
+width:200px;
+margin:10px;
+padding:10px;
 border-radius:10px;
-box-shadow:0 5px 20px rgba(0,0,0,0.15);
-overflow:hidden;
+box-shadow:0 0 10px rgba(0,0,0,0.2);
 text-align:center;
 }
 
-.card img{
+.product img{
 width:100%;
-height:250px;
-object-fit:cover;
+border-radius:10px;
 }
 
-.price{
-color:green;
-font-size:20px;
-}
-
-button.buy{
+button{
 background:black;
 color:white;
 border:none;
 padding:10px;
-margin:10px;
-width:90%;
 border-radius:5px;
 cursor:pointer;
 }
 
-</style>
+button:hover{
+background:green;
+}
 
+</style>
 </head>
 
 <body>
 
 <header>
-
-<h1>Zaidyy Clothing</h1>
-<p>Premium Fashion Store</p>
-
+Zaidyy Clothing
 </header>
 
-<div class="buttons">
+<div class="products">
 
-<button onclick="filter('all')">All</button>
-<button onclick="filter('tshirt')">T-Shirts</button>
-<button onclick="filter('hoodie')">Hoodies</button>
-<button onclick="filter('jeans')">Jeans</button>
-
-</div>
-
-<section class="products">
-
-<div class="card item tshirt">
-<img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab">
+<div class="product">
+<img src="tshirt.jpg">
 <h3>Black T-Shirt</h3>
-<p class="price">₹499</p>
-<button class="buy">Buy</button>
+<p>₹499</p>
+<button>Buy Now</button>
 </div>
 
-<div class="card item tshirt">
-<img src="https://images.unsplash.com/photo-1523381294911-8d3cead13475">
-<h3>White T-Shirt</h3>
-<p class="price">₹549</p>
-<button class="buy">Buy</button>
+<div class="product">
+<img src="hoodie.jpg">
+<h3>White Hoodie</h3>
+<p>₹899</p>
+<button>Buy Now</button>
 </div>
 
-<div class="card item hoodie">
-<img src="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c">
-<h3>Grey Hoodie</h3>
-<p class="price">₹999</p>
-<button class="buy">Buy</button>
+<div class="product">
+<img src="shirt.jpg">
+<h3>Blue Shirt</h3>
+<p>₹699</p>
+<button>Buy Now</button>
 </div>
 
-<div class="card item hoodie">
-<img src="https://images.unsplash.com/photo-1541099649105-f69ad21f3246">
-<h3>Black Hoodie</h3>
-<p class="price">₹1099</p>
-<button class="buy">Buy</button>
 </div>
-
-<div class="card item jeans">
-<img src="https://images.unsplash.com/photo-1542272604-787c3835535d">
-<h3>Blue Jeans</h3>
-<p class="price">₹1299</p>
-<button class="buy">Buy</button>
-</div>
-
-<div class="card item jeans">
-<img src="https://images.unsplash.com/photo-1473968512647-3e447244af8f">
-<h3>Stylish Jeans</h3>
-<p class="price">₹1399</p>
-<button class="buy">Buy</button>
-</div>
-
-</section>
-
-<script>
-
-function filter(type){
-
-let items=document.querySelectorAll(".item")
-
-items.forEach(item=>{
-
-if(type==="all"||item.classList.contains(type)){
-
-item.style.display="block"
-
-}else{
-
-item.style.display="none"
-
-}
-
-})
-
-}
-
-</script>
 
 </body>
-
-  </html>
+</html>
