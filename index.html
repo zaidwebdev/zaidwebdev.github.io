@@ -7,7 +7,6 @@
 
     <!-- CSS Style -->
     <style>
-        /* Basic styling */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
@@ -23,7 +22,6 @@
             background: #ff9800;
             color: white;
         }
-
         h1 { font-size: 48px; margin: 10px 0; }
         p { font-size: 20px; margin: 10px 0 20px; }
         button {
@@ -62,6 +60,40 @@
             box-shadow: 0 12px 20px rgba(0,0,0,0.25);
             background: #fef2e0;
         }
+
+        /* Testimonials */
+        .testimonial-card {
+            display: inline-block;
+            background: #fff7f0;
+            padding: 20px;
+            margin: 15px;
+            border-radius: 12px;
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+            max-width: 300px;
+        }
+
+        /* Contact Form */
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+            text-align: left;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 12px;
+            margin: 8px 0;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+        input[type=submit] {
+            background: #ff9800;
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        input[type=submit]:hover { background: #e68a00; }
 
         /* Footer */
         footer {
@@ -115,7 +147,7 @@
             h1 { font-size: 36px; }
             h2 { font-size: 28px; }
             p { font-size: 16px; }
-            .project-card { width: 80%; margin: 15px auto; display: block; }
+            .project-card, .testimonial-card { width: 80%; margin: 15px auto; display: block; }
         }
         @media (max-width: 480px) {
             h1 { font-size: 28px; }
@@ -150,6 +182,30 @@
         <div class="project-card">E-commerce Website</div>
     </section>
 
+    <!-- Testimonials Section -->
+    <section class="scroll-animate">
+        <h2>Testimonials</h2>
+        <div class="testimonial-card">
+            <p>"Zaid built our website and it looks amazing! Highly recommended."</p>
+            <p>– Client A</p>
+        </div>
+        <div class="testimonial-card">
+            <p>"Fast, professional, and creative. Love the results!"</p>
+            <p>– Client B</p>
+        </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section class="scroll-animate">
+        <h2>Contact Me</h2>
+        <form action="mailto:Zaidsheikhzaid06@gmail.com" method="post" enctype="text/plain">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+            <input type="submit" value="Send Message">
+        </form>
+    </section>
+
     <!-- Footer -->
     <footer>
         © 2026 Zaid Web Developer
@@ -161,27 +217,17 @@
     <!-- Scroll Animation Script -->
     <script>
         const scrollElements = document.querySelectorAll(".scroll-animate");
-
         const elementInView = (el, offset = 100) => {
             const elementTop = el.getBoundingClientRect().top;
             return elementTop <= (window.innerHeight - offset);
         };
-
-        const displayScrollElement = (element) => {
-            element.classList.add("visible");
-        };
-
+        const displayScrollElement = (element) => { element.classList.add("visible"); };
         const handleScrollAnimation = () => {
-            scrollElements.forEach(el => {
-                if (elementInView(el, 150)) {
-                    displayScrollElement(el);
-                }
-            });
-        }
-
+            scrollElements.forEach(el => { if (elementInView(el, 150)) displayScrollElement(el); });
+        };
         window.addEventListener("scroll", handleScrollAnimation);
         window.addEventListener("load", handleScrollAnimation);
     </script>
 
 </body>
-</html>
+    </html>
