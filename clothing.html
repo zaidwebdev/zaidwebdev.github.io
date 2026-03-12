@@ -19,18 +19,20 @@ padding:20px;
 font-size:28px;
 }
 
+.container{
+padding:20px;
+}
+
 .products{
 display:flex;
 flex-wrap:wrap;
-justify-content:center;
-padding:20px;
+gap:20px;
 }
 
 .product{
 background:white;
-width:220px;
-margin:15px;
 padding:10px;
+width:200px;
 border-radius:10px;
 box-shadow:0 0 10px rgba(0,0,0,0.2);
 text-align:center;
@@ -54,11 +56,16 @@ button:hover{
 background:green;
 }
 
-#cart{
+.admin{
 background:white;
-margin:20px;
 padding:20px;
+margin-bottom:20px;
 border-radius:10px;
+}
+
+input{
+padding:8px;
+margin:5px;
 }
 
 </style>
@@ -71,54 +78,66 @@ border-radius:10px;
 Zaidyy Clothing
 </header>
 
-<h2 style="text-align:center;">Products</h2>
+<div class="container">
 
-<div class="products">
+<div class="admin">
+<h3>Add Product (Owner)</h3>
 
-<div class="product">
-<img src="tshirt.jpg">
-<h3>Black T-Shirt</h3>
-<p>₹499</p>
-<button onclick="addToCart('Black T-Shirt',499)">Add to Cart</button>
-</div>
+<input id="name" placeholder="Product name">
 
-<div class="product">
-<img src="hoodie.jpg">
-<h3>White Hoodie</h3>
-<p>₹899</p>
-<button onclick="addToCart('White Hoodie',899)">Add to Cart</button>
-</div>
+<input id="price" placeholder="Price">
 
-<div class="product">
-<img src="shirt.jpg">
-<h3>Blue Shirt</h3>
-<p>₹699</p>
-<button onclick="addToCart('Blue Shirt',699)">Add to Cart</button>
-</div>
+<input id="image" placeholder="Image URL">
+
+<button onclick="addProduct()">Add Product</button>
 
 </div>
 
-<div id="cart">
-<h2>Cart</h2>
-<ul id="cart-items"></ul>
-<p><b>Total: ₹<span id="total">0</span></b></p>
+<div class="products" id="product-list"></div>
+
 </div>
 
 <script>
 
-let cart = [];
-let total = 0;
+let products = [];
 
-function addToCart(name,price){
+function addProduct(){
 
-cart.push({name,price});
-total += price;
+let name = document.getElementById("name").value;
+let price = document.getElementById("price").value;
+let image = document.getElementById("image").value;
 
-let li = document.createElement("li");
-li.innerText = name + " - ₹" + price;
+let product = {name,price,image};
 
-document.getElementById("cart-items").appendChild(li);
-document.getElementById("total").innerText = total;
+products.push(product);
+
+showProducts();
+
+}
+
+function showProducts(){
+
+let list = document.getElementById("product-list");
+
+list.innerHTML = "";
+
+products.forEach(p => {
+
+list.innerHTML += `
+<div class="product">
+
+<img src="${p.image}">
+
+<h3>${p.name}</h3>
+
+<p>₹${p.price}</p>
+
+<button>Add to Cart</button>
+
+</div>
+`;
+
+});
 
 }
 
